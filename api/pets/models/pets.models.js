@@ -24,7 +24,7 @@ export const editItem = (id, data) => {
         if(index === -1) {
             throw new Error('Pet not found');
         } else {
-            db.pets[index] = data;
+            db.pets[index] = { id: id, ...data };
             return db.pets[index];
         }
     } catch (error) {
